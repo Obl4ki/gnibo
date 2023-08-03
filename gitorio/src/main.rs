@@ -7,8 +7,8 @@ use sysinfo::{System, SystemExt};
 
 const FACTORIO_STEAM_ID: &str = "427520";
 const SLEEP_SECONDS: u64 = 10;
-const GIT_DIR: &str = r"C:\Users\oblak\AppData\Roaming\Factorio\saves\";
-const SAVE_NAME: &str = "gnibo"
+const GIT_DIR: &str = r"C:\Users\W10\AppData\Roaming\Factorio\saves\";
+const SAVE_NAME: &str = "gnibo";
 
 
 fn amirmir() {
@@ -42,7 +42,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     let now: DateTime<_> = Local::now();
 
     // Run git on save directory
-    Command::new("git").args(["add", format!("{save_name}.zip")]).output()?;
+    Command::new("git").args(["add", &format!("{SAVE_NAME}.zip")]).output()?;
     Command::new("git")
         .args(["commit", "-m", &format!("Saved at {now}")])
         .output()?;
