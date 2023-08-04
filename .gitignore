@@ -1,0 +1,5 @@
+*.*
+# whitelist these files and directories:
+!.gitignore
+!/gitorio/**/*
+!gnibo.zip
