@@ -35,7 +35,7 @@ fn main() -> Result<()> {
     println!("{} steam://rungameid/{}", cfg.steam_path, FACTORIO_STEAM_ID);
 
     if !cfg.dry_run {
-        let out = Command::new("steam")
+        let out = Command::new(cfg.steam_path)
             .arg(format!("steam://rungameid/{FACTORIO_STEAM_ID}"))
             .output()?;
         stdout().write_all(&out.stdout)?;
